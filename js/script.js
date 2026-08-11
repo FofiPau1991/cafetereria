@@ -111,3 +111,214 @@ elementosAnimados.forEach(function (elemento) {
     observador.observe(elemento);
 
 });
+
+/* =========================================
+   INFORMACIÓN DE LOS PRODUCTOS
+========================================= */
+
+const productos = {
+
+    cafe: {
+        titulo: "Café artesanal",
+        imagen: "img/cafe.jpg",
+        descripcion: "Café recién preparado con un aroma intenso y un sabor equilibrado.",
+        ingredientes: [
+            "Granos de café tostado",
+            "Agua",
+            "Leche (opcional)"
+        ],
+        alergenos: "Lácteos, únicamente si se agrega leche.",
+        precio: "$3.50"
+    },
+
+    croissant: {
+        titulo: "Croissant",
+        imagen: "img/croissant.jpg",
+        descripcion: "Croissant crujiente por fuera y suave por dentro.",
+        ingredientes: [
+            "Harina de trigo",
+            "Mantequilla",
+            "Agua",
+            "Levadura",
+            "Sal",
+            "Azúcar"
+        ],
+        alergenos: "Gluten, lácteos y huevos (brillo exterior).",
+        precio: "$2.75"
+    },
+
+    postre: {
+        titulo: "Postre de la casa",
+        imagen: "img/postre.jpg",
+        descripcion: "Una deliciosa creación dulce preparada por nuestra cocina.",
+        ingredientes: [
+            "Harina",
+            "Azúcar",
+            "Huevos",
+            "Lácteos",
+            "Esencias aromáticas"
+        ],
+        alergenos: "Gluten, lácteos y huevos.",
+        precio: "$4.50"
+    },
+
+    desayuno: {
+        titulo: "Desayuno especial",
+        imagen: "img/desayuno.jpg",
+        descripcion: "Una combinación perfecta para comenzar bien el día.",
+        ingredientes: [
+            "Huevos",
+            "Pan",
+            "Jugo de fruta",
+            "Café",
+            "Tocino o salchicha"
+        ],
+        alergenos: "Huevos, gluten y lácteos.",
+        precio: "$6.50"
+    },
+
+    cappuccino: {
+        titulo: "Cappuccino",
+        imagen: "img/cappuccino.jpg",
+        descripcion: "Café espresso con leche entera vaporizada.",
+        ingredientes: [
+            "Café espresso",
+            "Leche entera vaporizada"
+        ],
+        alergenos: "Lácteos.",
+        precio: "$3.75"
+    },
+
+    chocolate: {
+        titulo: "Chocolate caliente",
+        imagen: "img/chocolate.jpg",
+        descripcion: "Chocolate caliente cremoso, perfecto para disfrutar en cualquier momento.",
+        ingredientes: [
+            "Cacao",
+            "Manteca de cacao",
+            "Azúcar",
+            "Leche en polvo"
+        ],
+        alergenos: "Lácteos. Puede contener trazas de frutos de cáscara.",
+        precio: "$3.50"
+    },
+
+    sandwich: {
+        titulo: "Sándwich de la casa",
+        imagen: "img/sandwich.jpg",
+        descripcion: "Pan artesanal con ingredientes frescos y una deliciosa combinación de sabores.",
+        ingredientes: [
+            "Pan",
+            "Embutidos (jamón/pavo)",
+            "Queso",
+            "Vegetales",
+            "Aderezos"
+        ],
+        alergenos: "Gluten, lácteos y soja (en aderezos o embutidos).",
+        precio: "$5.50"
+    },
+
+    cheesecake: {
+        titulo: "Cheesecake",
+        imagen: "img/cheesecake.jpg",
+        descripcion: "Cremoso cheesecake con una base crujiente y un delicado toque dulce.",
+        ingredientes: [
+            "Queso crema",
+            "Azúcar",
+            "Huevos",
+            "Galletas",
+            "Mantequilla"
+        ],
+        alergenos: "Lácteos, huevos y gluten.",
+        precio: "$4.25"
+    }
+
+};
+
+
+/* =========================================
+   ELEMENTOS DE LA VENTANA MODAL
+========================================= */
+
+const modalProducto = document.getElementById("modal-producto");
+const cerrarModal = document.getElementById("cerrar-modal");
+
+const modalImagen = document.getElementById("modal-imagen");
+const modalTitulo = document.getElementById("modal-titulo");
+const modalDescripcion = document.getElementById("modal-descripcion");
+const modalIngredientes = document.getElementById("modal-ingredientes");
+const modalAlergenos = document.getElementById("modal-alergenos");
+const modalPrecio = document.getElementById("modal-precio");
+
+
+/* =========================================
+   ABRIR MODAL
+========================================= */
+
+const tarjetasProductos = document.querySelectorAll(".producto-modal");
+
+tarjetasProductos.forEach(function(tarjeta) {
+
+    tarjeta.addEventListener("click", function() {
+
+        const nombreProducto = tarjeta.dataset.producto;
+        const producto = productos[nombreProducto];
+
+        if (!producto) {
+            return;
+        }
+
+        modalImagen.src = producto.imagen;
+        modalImagen.alt = producto.titulo;
+
+        modalTitulo.textContent = producto.titulo;
+
+        modalDescripcion.textContent = producto.descripcion;
+
+        modalIngredientes.innerHTML = "";
+
+        producto.ingredientes.forEach(function(ingrediente) {
+
+            const li = document.createElement("li");
+
+            li.textContent = ingrediente;
+
+            modalIngredientes.appendChild(li);
+
+        });
+
+        modalAlergenos.textContent = producto.alergenos;
+
+        modalPrecio.textContent = producto.precio;
+
+        modalProducto.classList.add("activo");
+
+    });
+
+});
+
+
+/* =========================================
+   CERRAR MODAL
+========================================= */
+
+cerrarModal.addEventListener("click", function() {
+
+    modalProducto.classList.remove("activo");
+
+});
+
+
+/* =========================================
+   CERRAR AL HACER CLIC FUERA
+========================================= */
+
+modalProducto.addEventListener("click", function(evento) {
+
+    if (evento.target === modalProducto) {
+
+        modalProducto.classList.remove("activo");
+
+    }
+
+});
