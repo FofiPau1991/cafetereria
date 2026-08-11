@@ -177,118 +177,158 @@
 
             <!-- Producto 1 -->
 
-            <article class="producto">
+           <article class="producto producto-modal" data-producto="cafe">
 
-                <div class="producto-imagen">
+    <div class="producto-imagen">
 
-                    <img src="img/cafe.jpg" alt="Café artesanal">
+        <img src="img/cafe.jpg" alt="Café artesanal">
 
-                </div>
+    </div>
 
-                <div class="producto-contenido">
+    <div class="producto-contenido">
 
-                    <h3>Café artesanal</h3>
+        <h3>Café artesanal</h3>
 
-                    <p>
-                        Café recién preparado con un aroma
-                        intenso y un sabor equilibrado.
-                    </p>
+        <p>
+            Café recién preparado con un aroma
+            intenso y un sabor equilibrado.
+        </p>
 
-                    <span class="precio">
-                        $3.50
-                    </span>
+        <span class="precio">
+            $3.50
+        </span>
 
-                </div>
+    </div>
 
-            </article>
+</article>
 
+<!-- Ventana modal: Café artesanal -->
+
+<!-- ==========================
+     VENTANA MODAL DE PRODUCTOS
+=========================== -->
+
+<div class="modal-producto" id="modal-producto">
+
+    <div class="modal-contenido">
+
+        <button class="modal-cerrar" id="cerrar-modal" aria-label="Cerrar">
+            ×
+        </button>
+
+        <img id="modal-imagen" src="" alt="">
+
+        <div class="modal-informacion">
+
+            <h2 id="modal-titulo"></h2>
+
+            <p id="modal-descripcion"></p>
+
+            <h3>Ingredientes básicos</h3>
+
+            <ul id="modal-ingredientes"></ul>
+
+            <h3>⚠️ Alérgenos comunes</h3>
+
+            <p id="modal-alergenos"></p>
+
+            <span class="precio" id="modal-precio"></span>
+
+        </div>
+
+    </div>
+
+</div>
 
             <!-- Producto 2 -->
 
-            <article class="producto">
+           <!-- Producto 2: Croissant -->
 
-                <div class="producto-imagen">
+<article class="producto producto-modal" data-producto="croissant">
 
-                    <img src="img/croissant.jpg" alt="Croissant artesanal">
+    <div class="producto-imagen">
 
-                </div>
+        <img src="img/croissant.jpg" alt="Croissant artesanal">
 
-                <div class="producto-contenido">
+    </div>
 
-                    <h3>Croissant</h3>
+    <div class="producto-contenido">
 
-                    <p>
-                        Croissant crujiente por fuera y
-                        suave por dentro.
-                    </p>
+        <h3>Croissant</h3>
 
-                    <span class="precio">
-                        $2.75
-                    </span>
+        <p>
+            Croissant crujiente por fuera y
+            suave por dentro.
+        </p>
 
-                </div>
+        <span class="precio">
+            $2.75
+        </span>
 
-            </article>
+    </div>
 
-
-            <!-- Producto 3 -->
-
-            <article class="producto">
-
-                <div class="producto-imagen">
-
-                    <img src="img/postre.jpg" alt="Postre de la casa">
-
-                </div>
-
-                <div class="producto-contenido">
-
-                    <h3>Postre de la casa</h3>
-
-                    <p>
-                        Una deliciosa creación dulce
-                        preparada por nuestra cocina.
-                    </p>
-
-                    <span class="precio">
-                        $4.50
-                    </span>
-
-                </div>
-
-            </article>
+</article>
 
 
-            <!-- Producto 4 -->
+<!-- Producto 3: Postre de la casa -->
 
-            <article class="producto">
+<article class="producto producto-modal" data-producto="postre">
 
-                <div class="producto-imagen">
+    <div class="producto-imagen">
 
-                    <img src="img/desayuno.jpg" alt="Desayuno especial">
+        <img src="img/postre.jpg" alt="Postre de la casa">
 
-                </div>
+    </div>
 
-                <div class="producto-contenido">
+    <div class="producto-contenido">
 
-                    <h3>Desayuno especial</h3>
+        <h3>Postre de la casa</h3>
 
-                    <p>
-                        Una combinación perfecta para
-                        comenzar bien el día.
-                    </p>
+        <p>
+            Una deliciosa creación dulce
+            preparada por nuestra cocina.
+        </p>
 
-                    <span class="precio">
-                        $6.50
-                    </span>
+        <span class="precio">
+            $4.50
+        </span>
 
-                </div>
+    </div>
 
-            </article>
+</article>
 
-<!-- Producto 5 -->
 
-<article class="producto">
+<!-- Producto 4: Desayuno especial -->
+
+<article class="producto producto-modal" data-producto="desayuno">
+
+    <div class="producto-imagen">
+
+        <img src="img/desayuno.jpg" alt="Desayuno especial">
+
+    </div>
+
+    <div class="producto-contenido">
+
+        <h3>Desayuno especial</h3>
+
+        <p>
+            Una combinación perfecta para
+            comenzar bien el día.
+        </p>
+
+        <span class="precio">
+            $6.50
+        </span>
+
+    </div>
+
+</article>
+
+
+<!-- Producto 5: Cappuccino -->
+
+<article class="producto producto-modal" data-producto="cappuccino">
 
     <div class="producto-imagen">
 
@@ -313,9 +353,10 @@
 
 </article>
 
-<!-- Producto 6 -->
 
-<article class="producto">
+<!-- Producto 6: Chocolate caliente -->
+
+<article class="producto producto-modal" data-producto="chocolate">
 
     <div class="producto-imagen">
 
@@ -340,9 +381,10 @@
 
 </article>
 
-<!-- Producto 7 -->
 
-<article class="producto">
+<!-- Producto 7: Sándwich de la casa -->
+
+<article class="producto producto-modal" data-producto="sandwich">
 
     <div class="producto-imagen">
 
@@ -367,9 +409,10 @@
 
 </article>
 
-<!-- Producto 8 -->
 
-<article class="producto">
+<!-- Producto 8: Cheesecake -->
+
+<article class="producto producto-modal" data-producto="cheesecake">
 
     <div class="producto-imagen">
 
